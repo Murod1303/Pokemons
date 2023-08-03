@@ -134,3 +134,22 @@ img {
     height: 200px;
   }
 }
+
+@media only screen and ( max-width: 579px) {
+  .poke__list {
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width:849px) {
+  .poke__item {
+    max-width: 350px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width:781px) {
+  .poke__item {
+    max-width: 250px;
+    width: 100%;
+  }
+}
