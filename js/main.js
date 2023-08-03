@@ -42,8 +42,8 @@ pokemons.forEach(function(item, index, arr) {
   pokeEggSparwElement.appendChild(spanEggsElement);
 
   pokeFlexElement.classList.add("poke__spans");
-  pokeFlexElement.appendChild(pokeEggSparwElement);
   pokeFlexElement.appendChild(pokeWHElement);
+  pokeFlexElement.appendChild(pokeEggSparwElement);
   
   liElement.classList.add("poke__item");
   liElement.appendChild(pokeImgElement);
