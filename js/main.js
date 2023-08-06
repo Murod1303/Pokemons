@@ -77,6 +77,15 @@ elForm.addEventListener("submit", function (evt) {
 
 
 
+elInputName.addEventListener("keyup", function() {
+  const elInputNameValue = elInputName.value.trim().toLowerCase();
+  const search__key = pokemons.filter(function(item) {
+    return item.name.toLowerCase().includes(elInputNameValue)
+  })
+  renderPokemons(search__key);
+})
+
+
 
 
 
