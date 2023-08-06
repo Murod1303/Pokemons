@@ -67,6 +67,34 @@ img {
   background-color: #000;
 }
 
+.poke__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.poke__input {
+  padding: 10px;
+  padding-left: 15px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.poke__search {
+  max-width: 150px;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ea1538;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+
 .poke__list {
   display: flex;
   flex-wrap: wrap;
