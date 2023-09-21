@@ -3,7 +3,7 @@ var elForm =document.querySelector(".poke__form")
 var elInputName = document.querySelector(".poke__input--name")
 var elInputWeigth = document.querySelector(".poke__input--weigth")
 var elInputHeigth = document.querySelector(".poke__input--heigth")
-
+var elInputNameSort = document.querySelector(".poke__input--name-sort")
 
 function renderPokemons(data) {
   elList.innerHTML = "";
@@ -62,19 +62,6 @@ function renderPokemons(data) {
 renderPokemons(pokemons);
 
 
-elForm.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  var elInputNameValue = elInputName.value.trim().toLowerCase();
-  // var elInputWeigthValue = elInputWeigth.value.trim();
-  // var elInputHeigthValue = elInputHeigth.value.trim();
-
-  var search_poke =  pokemons.filter(function(item) {
-    return item.name.toLowerCase() == elInputNameValue;
-  }); 
-
-  renderPokemons(search_poke)
-})
-
 
 
 elInputName.addEventListener("keyup", function() {
@@ -86,8 +73,36 @@ elInputName.addEventListener("keyup", function() {
 })
 
 
+elInputWeigth.addEventListener("change", evt=> {
+  evt.preventDefault();
+  const sortWeight = pokemons.sort((a, b) => {
+    return a.weight - b.weight
+  })
+  renderPokemons(sortWeight)
+})
+
+elInputHeigth.addEventListener("change", evt=> {
+  evt.preventDefault();
+  const sortHeght = pokemons.sort((a, b) => {
+    return a.height - b.height
+  })
+  renderPokemons(sortHeght)
+})
+
+elInputNameSort.addEventListener("change", evt=> {
+  evt.preventDefault()
+  const sortName = pokemons.sort((a, b) => {
+    return a.name.toLowerCase().charCodeAt(0) - b.name.toLowerCase().charCodeAt(0)
+  })
+  renderPokemons(sortName)
+})
 
 
+
+
+
+
+// background gradiant
 
 var colors = new Array(
   [62,35,255],

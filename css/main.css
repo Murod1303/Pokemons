@@ -82,6 +82,18 @@ img {
   border-radius: 30px;
   font-size: 16px;
 }
+.poke__checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.poke__label-text {
+  margin-left: 5px;
+  font-size: 20px;
+  color: #fff;
+
+}
 
 .poke__search {
   max-width: 150px;
