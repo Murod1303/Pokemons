@@ -166,6 +166,13 @@ img {
   font-weight: 600;
 }
 
+.marked {
+  padding: 1px 0px;
+  color: #000;
+  background-color: greenyellow;
+  border-radius: 5px;
+}
+
 
 
 @media only screen and (max-width: 580px) {

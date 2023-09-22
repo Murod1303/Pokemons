@@ -5,9 +5,11 @@ var elInputWeigth = document.querySelector(".poke__input--weigth")
 var elInputHeigth = document.querySelector(".poke__input--heigth")
 var elInputNameSort = document.querySelector(".poke__input--name-sort")
 
-function renderPokemons(data) {
+
+
+function renderPokemons(data, elInputNameValue) {
   elList.innerHTML = "";
-  data.forEach(function(item, index, arr) {
+  data.forEach(function(item) {
     var liElement = document.createElement("li");
     var spanWeigthElement = document.createElement("span");
     var spanHeigthElement = document.createElement("span");
@@ -33,10 +35,20 @@ function renderPokemons(data) {
     spanEggsElement.textContent = "Egg" + ": " + `${item.egg}`;
     
     spanSparwElement.textContent = "Spawn time" + ": " + `${item.spawn_time}`;
+  
     
-    pokeNameElement.textContent = item.name
-    
+    // highlight name and name
     pokeNameElement.classList.add("poke__name")
+    if (elInputNameValue) {
+      console.log(elInputNameValue);
+      const regex = new RegExp(elInputNameValue, "gi")
+      const marked = item.name.replace(regex, `<mark class="marked">$&</mark>`);
+
+      pokeNameElement.innerHTML = marked
+    }else {
+      pokeNameElement.innerHTML = item.name
+    }
+    
     
     pokeWHElement.classList.add("poke__wh")
     pokeWHElement.appendChild(spanHeigthElement);
@@ -69,7 +81,7 @@ elInputName.addEventListener("keyup", function() {
   const search__key = pokemons.filter(function(item) {
     return item.name.toLowerCase().includes(elInputNameValue)
   })
-  renderPokemons(search__key);
+  renderPokemons(search__key, elInputNameValue);
 })
 
 
