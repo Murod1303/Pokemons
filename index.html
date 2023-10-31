@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./pokeLogo.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="./css/main.css">
   <title>Pokemons</title>
 </head>
@@ -15,14 +17,20 @@
           <img class="poke__logo" src="./logopng.png" alt="" width="500" height="300">
           <form class="poke__form">
             <input class="poke__input poke__input--name" type="text" aria-label="pokemons name" placeholder="Search name" >
+            <!-- <label class="poke__checkbox-label">
+              <input class="poke__input poke__input--none" type="radio" name="pokeWH" aria-label="pokemons none" >
+              <span class="poke__label-text">
+                None
+              </span>
+            </label>
             <label class="poke__checkbox-label">
-              <input class="poke__input poke__input--weigth" type="checkbox" aria-label="pokemons Weigth" >
+              <input class="poke__input poke__input--weigth" type="radio" name="pokeWH" aria-label="pokemons Weigth" >
               <span class="poke__label-text">
                 pokemons Weigth
               </span>
             </label>
             <label class="poke__checkbox-label">
-              <input class="poke__input poke__input--heigth" type="checkbox" aria-label="pokemons height" >
+              <input class="poke__input poke__input--heigth" type="radio" name="pokeWH" aria-label="pokemons height" >
               <span class="poke__label-text">
                 pokemons height
               </span>
@@ -32,8 +40,7 @@
               <span class="poke__label-text">
                 A-Z
               </span>
-            </label>
-            <button class="poke__search" type="submit">Search</button>
+            </label> -->
           </form>
           <ul class="poke__list">
             <!-- <li class="poke__item">
@@ -65,8 +72,12 @@
       </div>
     </section>
   </main>
+  <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <script src="./js/pokemons.js"></script>
   <script src="./js/main.js"></script>
 </body>
-</html>
+</html><link rel="shortcut icon" href="images/pokemonswebp.webp" type="image/x-icon">

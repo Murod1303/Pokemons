@@ -122,20 +122,20 @@ img {
   max-width: 250px;
   width: 100%;
   padding: 10px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 20px;
   background-color: #fff;
-  -webkit-box-shadow: 4px 4px 34px 0px rgba(34, 60, 80, 0.27);
-  -moz-box-shadow: 4px 4px 34px 0px rgba(34, 60, 80, 0.27);
-  box-shadow: 4px 4px 34px 0px rgba(34, 60, 80, 0.27);
+  -webkit-box-shadow:inset 4px 4px 34px 0px rgba(34, 60, 80, 0.27);
+  -moz-box-shadow:inset 4px 4px 34px 0px rgba(34, 60, 80, 0.27);
+  box-shadow:inset 4px 4px 34px 0px rgba(34, 60, 80, 0.27);
   transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .poke__item:hover {
-  border: 1px solid #ea1538;
-  -webkit-box-shadow: 4px 4px 34px 0px rgba(234, 21, 56, 0.27);
-  -moz-box-shadow: 4px 4px 34px 0px rgba(234, 21, 56, 0.27);
-  box-shadow: 4px 4px 34px 0px rgba(234, 21, 56, 0.27);
+  border: 2px solid #ea1538;
+  -webkit-box-shadow: inset 4px 4px 34px 0px rgba(234, 21, 56, 0.27);
+  -moz-box-shadow: inset 4px 4px 34px 0px rgba(234, 21, 56, 0.27);
+  box-shadow: inset 4px 4px 34px 0px rgba(234, 21, 56, 0.27);
 }
 
 .poke__spans {

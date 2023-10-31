@@ -3,6 +3,7 @@ var elForm =document.querySelector(".poke__form")
 var elInputName = document.querySelector(".poke__input--name")
 var elInputWeigth = document.querySelector(".poke__input--weigth")
 var elInputHeigth = document.querySelector(".poke__input--heigth")
+var elInputnone = document.querySelector(".poke__input--none")
 var elInputNameSort = document.querySelector(".poke__input--name-sort")
 
 
@@ -27,6 +28,13 @@ function renderPokemons(data, elInputNameValue) {
     
     pokeImgElement.width = "150";
     pokeImgElement.height = "100"
+    // liElement.setAttribute("data-aos", "fade-up")
+    // liElement.setAttribute("data-aos-duration", "1000")
+    
+    
+    //     <div data-aos="fade-up"
+    //      data-aos-duration="3000">
+    // </div>
     
     spanWeigthElement.textContent ="weight" + ": " + `${item.weight}`;
     
@@ -35,15 +43,14 @@ function renderPokemons(data, elInputNameValue) {
     spanEggsElement.textContent = "Egg" + ": " + `${item.egg}`;
     
     spanSparwElement.textContent = "Spawn time" + ": " + `${item.spawn_time}`;
-  
+    
     
     // highlight name and name
     pokeNameElement.classList.add("poke__name")
     if (elInputNameValue) {
-      console.log(elInputNameValue);
       const regex = new RegExp(elInputNameValue, "gi")
       const marked = item.name.replace(regex, `<mark class="marked">$&</mark>`);
-
+      
       pokeNameElement.innerHTML = marked
     }else {
       pokeNameElement.innerHTML = item.name
@@ -74,6 +81,18 @@ function renderPokemons(data, elInputNameValue) {
 renderPokemons(pokemons);
 
 
+// let cate = []
+// function categories(poke) {
+//   poke.forEach(item => {
+//     item.weaknesses.flat().forEach(el => {
+//       if (!cate.includes(el)) {
+//         cate.push(el)
+//       }
+//     })
+//   });
+// }
+// categories(pokemons)
+
 
 
 elInputName.addEventListener("keyup", function() {
@@ -84,31 +103,65 @@ elInputName.addEventListener("keyup", function() {
   renderPokemons(search__key, elInputNameValue);
 })
 
+// elInputnone.addEventListener("change", evt=> {
+//   evt.preventDefault();
 
-elInputWeigth.addEventListener("change", evt=> {
-  evt.preventDefault();
-  const sortWeight = pokemons.sort((a, b) => {
-    return a.weight - b.weight
-  })
-  renderPokemons(sortWeight)
-})
+//   renderPokemons(pokemons)
+// })
 
-elInputHeigth.addEventListener("change", evt=> {
-  evt.preventDefault();
-  const sortHeght = pokemons.sort((a, b) => {
-    return a.height - b.height
-  })
-  renderPokemons(sortHeght)
-})
+// elInputWeigth.addEventListener("change", evt=> {
+//   evt.preventDefault();
+//   const sortWeight = pokemons.sort((a, b) => {
+//     return a.weight - b.weight
+//   })
+//   renderPokemons(sortWeight)
+// })
 
-elInputNameSort.addEventListener("change", evt=> {
-  evt.preventDefault()
-  const sortName = pokemons.sort((a, b) => {
-    return a.name.toLowerCase().charCodeAt(0) - b.name.toLowerCase().charCodeAt(0)
-  })
-  renderPokemons(sortName)
-})
+// elInputHeigth.addEventListener("change", evt=> {
+//   evt.preventDefault();
+//   const sortHeght = pokemons.sort((a, b) => {
+//     return a.height - b.height
+//   })
+//   renderPokemons(sortHeght)
+// })
 
+// elInputNameSort.addEventListener("change", evt=> {
+//   if (elInputNameSort.checked) {
+//     console.log(elInputNameSort.checked);
+//     const sortName = pokemons.sort((a, b) => {
+//       return a.name.toLowerCase().charCodeAt(0) - b.name.toLowerCase().charCodeAt(0)
+//     })
+//     renderPokemons(sortName)
+//   }
+// })
+
+
+// elForm.addEventListener("click", evt=> {
+//   if (elInputnone.checked) {
+//     if (evt.target.matches(".poke__input--none")) {
+//       console.log("dada");
+//       renderPokemons(pokemons)
+//     }
+//   }
+//   if (elInputWeigth.checked) {
+//     if (evt.target.matches(".poke__input--weigth")) {
+//       console.log("wegth");
+//       const sortWeight = pokemons.sort((a, b) => {
+//         return a.weight - b.weight
+//       })
+//       renderPokemons(sortWeight)
+//     }
+//   }
+//   if (elInputHeigth.checked) {
+//     if(evt.target.matches(".poke__input--heigth")) {
+//       console.log("heght");
+//       const sortHeght = pokemons.sort((a, b) => {
+//         return a.height - b.height
+//       })
+//       renderPokemons(sortHeght)
+//     }
+//   }
+// })
 
 
 
